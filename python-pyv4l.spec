@@ -51,6 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/c4l.html
+%doc doc/v4l.html
 %attr(755,root,root) %{py_sitedir}/v4l.so
 %{_examplesdir}/%{name}-%{version}

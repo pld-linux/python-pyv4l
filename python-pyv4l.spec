@@ -9,7 +9,7 @@ License:	GPL
 Group:		Libraries/Python
 Source0:	http://members.optushome.com.au/pythondeveloper/programming/python/pyv4l/download/%{module}-%{version}.tar.gz
 # Source0-md5:	1bcf20c13e1ae36a0d40130158d96a67
-Patch0:         %{name}-enable_channel_norm.patch
+Patch0:		%{name}-enable_channel_norm.patch
 URL:		http://members.optushome.com.au/pythondeveloper/programming/python/pyv4l/
 BuildRequires:	python-devel
 Requires:	python-modules
@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{py_sitedir},%{_examplesdir}/%{name}-%{version}}
 
 python setup.py install \
-        --root=$RPM_BUILD_ROOT \
+	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}

@@ -30,7 +30,7 @@ wygodny interfejs obiektowy do funkcji Video 4 Linux.
 
 %build
 CFLAGS="%{rpmcflags}" \
-LDFLAGS="/usr/X11R6/%{_lib}" \
+LDFLAGS="-L/usr/X11R6/%{_lib}" \
 python setup.py build
 
 %install

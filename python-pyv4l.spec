@@ -1,4 +1,3 @@
-# TODO: Add examples package. Install docs.
 %include	/usr/lib/rpm/macros.python
 %define 	module pyv4l
 
@@ -13,8 +12,8 @@ Source0:	http://members.optushome.com.au/pythondeveloper/programming/python/pyv4
 # Source0-md5:	1bcf20c13e1ae36a0d40130158d96a67
 Patch0:         %{name}-enable_channel_norm.patch
 URL:		http://members.optushome.com.au/pythondeveloper/programming/python/pyv4l/
-Requires:	python-modules
 BuildRequires:	python-devel
+Requires:	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,17 +29,20 @@ wygodny interfejs obiektowy do funkcji Video 4 Linux.
 %patch0 -p1
 
 %build
-CFLAGS="%{rpmcflags}"
-export CLFAGS
+CFLAGS="%{rpmcflags}" \
+LDFLAGS="/usr/X11R6/%{_lib}" \
 python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{py_sitedir}
+install -d $RPM_BUILD_ROOT{%{py_sitedir},%{_examplesdir}/%{name}-%{version}}
 
 python setup.py install \
         --root=$RPM_BUILD_ROOT \
 	--optimize=2
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install examples/*.py $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 find $RPM_BUILD_ROOT%{py_sitedir} -name \*.py -exec rm {} \;
 
@@ -49,5 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%%doc CREDITS ChangeLog README doc
-%{py_sitedir}/v4l.so
+%doc doc/c4l.html
+%attr(755,root,root) %{py_sitedir}/v4l.so
+%{_examplesdir}/%{name}-%{version}

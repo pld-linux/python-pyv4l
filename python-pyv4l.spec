@@ -1,5 +1,5 @@
 %include	/usr/lib/rpm/macros.python
-%define 	module pyv4l
+%define 	module	pyv4l
 
 Summary:	Python Video 4 Linux extension module developed in C
 Summary(pl):	Modu³ obs³ugi Video 4 Linux dla Pythona rozwijany w C

@@ -4,7 +4,7 @@ Summary:	Python Video 4 Linux extension module developed in C
 Summary(pl):	Modu³ obs³ugi Video 4 Linux dla Pythona rozwijany w C
 Name:		python-%{module}
 Version:	0.5.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://members.optushome.com.au/pythondeveloper/programming/python/pyv4l/download/%{module}-%{version}.tar.gz
@@ -12,7 +12,7 @@ Source0:	http://members.optushome.com.au/pythondeveloper/programming/python/pyv4
 Patch0:		%{name}-enable_channel_norm.patch
 URL:		http://members.optushome.com.au/pythondeveloper/programming/python/pyv4l/
 BuildRequires:	python-devel
-Requires:	python-modules
+%pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

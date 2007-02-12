@@ -1,7 +1,7 @@
 %define 	module	pyv4l
 
 Summary:	Python Video 4 Linux extension module developed in C
-Summary(pl):	Modu≥ obs≥ugi Video 4 Linux dla Pythona rozwijany w C
+Summary(pl.UTF-8):   Modu≈Ç obs≈Çugi Video 4 Linux dla Pythona rozwijany w C
 Name:		python-%{module}
 Version:	0.5.0
 Release:	3
@@ -19,8 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Python Video 4 Linux extension module developed in C. Provides a
 convenient Object Oriented interface to Video 4 Linux functions.
 
-%description -l pl
-Modu≥ obs≥ugi Video 4 Linux dla Pythona rozwijany w C. Dostarcza
+%description -l pl.UTF-8
+Modu≈Ç obs≈Çugi Video 4 Linux dla Pythona rozwijany w C. Dostarcza
 wygodny interfejs obiektowy do funkcji Video 4 Linux.
 
 %prep

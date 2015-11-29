@@ -11,6 +11,7 @@ Source0:	http://members.optushome.com.au/pythondeveloper/programming/python/pyv4
 # Source0-md5:	1bcf20c13e1ae36a0d40130158d96a67
 Patch0:		%{name}-enable_channel_norm.patch
 URL:		http://members.optushome.com.au/pythondeveloper/programming/python/pyv4l/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-devel
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
